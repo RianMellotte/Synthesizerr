@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{{ error|default(False, true) }}
+{{ play|default(False, true) }}
+
+{%block head %}
+    <title>Task Master</title>
+    {% if error == True %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Sorry, there was an issue synthesizing your phrase. Please try again!</strong>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{%block body %}
+<div class='content' className='div'>
+        {% if play == True %}
+        <audio src="/audio" autoplay ></audio>
+    {% endif %}
+	<h1> Synthesizer </h1>
+	<form action="/" method="POST">
+		<input type="text" name="content" id="content" value="{{ content }}">
+		<input type="submit" name='save' value="Save">
+        <input type="submit" name='play' value="Play">
+	</form>
+    {% if tasks|length < 1 %}
+	<h2>There are no tasks here, please create one below!</h2>
+	{% else %}
+	<br>
+	<table>
+		<tr>
+			<th>Phrase</th>
+			<th>Added</th>
+			<th>Actions</th>
+		</tr>
+		{% for task in tasks %}
+			<tr>
+				<td>{{ task.content }}</td>
+				<td>{{ task.date_created.date() }}</td>
+				<td class="actions">
+                    <form method="GET" action="/delete/{{task.id}}">
+                        <input type="submit" value="Delete">
+                    </form>
+                    <form method="GET" action="/update/{{task.id}}">
+                        <input type="submit" value="Update">
+                    </form>
+                    <form method="GET" action="/play/{{task.id}}">
+                        <input type="submit" value="Play">
+                    </form>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	{% endif %}
+</div>
+{% endblock %}
