@@ -93,4 +93,6 @@ def send_audio():
 
 
 if __name__ == '__main__':
- app.run(debug=True)
+ app.run(debug=True,
+         host='https://synthesizerr.herokuapp.com'
+         )
