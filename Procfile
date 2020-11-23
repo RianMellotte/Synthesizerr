@@ -1,1 +1,1 @@
-web: gunicorn https://synthesizerr.herokuapp.com
+web: gunicorn app:app

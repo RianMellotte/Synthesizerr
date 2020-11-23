@@ -24,7 +24,7 @@ def save_synth(phrase, file='audio.wav'):
     diphone_synth.out.save(file)
 
 
-@app.route('https://synthesizerr.herokuapp.com/', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def index():
  if request.method == 'POST':
   if 'save' in request.form:
