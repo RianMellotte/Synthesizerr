@@ -48,7 +48,7 @@ def index():
         return render_template('index.html', tasks=tasks, play=True, content=phrase)
     except:
         tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template('index.html', tasks=tasks, play=False, error=True)
+        return render_template('index.html', tasks=tasks, play=True, error=True)
  else:
   tasks = Todo.query.order_by(Todo.date_created).all()
   return render_template('index.html', tasks=tasks, play=False)
