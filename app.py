@@ -40,6 +40,7 @@ def index():
     phrase = request.form['content']
     try:
         save_synth(phrase)
+        print('got this far')
         tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html', tasks=tasks, play=True, content=phrase)
     except:
