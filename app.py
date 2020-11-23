@@ -19,10 +19,13 @@ class Todo(db.Model):
 def save_synth(phrase, file='audio.wav'):
     print(phrase)
     utt = synth.Utterance(phrase)
+    print('1')
     diphone_synth = synth.Synth()
+    print('2')
     diphone_synth.create_synthesis(utt.diphone_seq)
+    print('3')
     diphone_synth.out.save(file)
-
+    print('4')
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
