@@ -1,1 +1,1 @@
-web: gunicorn wsgi:app --preload -b
+web: gunicorn wsgi:app --preload -b https://synthesizerr.herokuapp.com

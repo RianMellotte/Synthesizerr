@@ -15,7 +15,6 @@ Jinja2==2.11.2
 MarkupSafe==1.1.1
 nltk==3.4.5
 numpy==1.17.3
-pico==2.0.5
 pytz==2020.4
 requests==2.24.0
 six==1.13.0
