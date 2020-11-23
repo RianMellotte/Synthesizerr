@@ -18,6 +18,7 @@ class Todo(db.Model):
 
 def save_synth(phrase, file='audio.wav'):
     print(phrase)
+    print('0')
     utt = synth.Utterance(phrase)
     print('1')
     diphone_synth = synth.Synth()
