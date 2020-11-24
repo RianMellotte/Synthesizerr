@@ -4,11 +4,11 @@ import os
 import simpleaudio
 import argparse
 from nltk.util import Index
-
 from nltk.corpus.reader.util import *
 from nltk.corpus.reader.api import *
 import re
 import nltk
+import nltk.tokenize
 import numpy as np
 
 ### NOTE: DO NOT CHANGE ANY OF THE EXISTING ARGUMENTS
