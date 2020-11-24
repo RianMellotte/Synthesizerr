@@ -108,7 +108,7 @@ class Synth:
 
 
 class Utterance:
-    def __init__(self, phrase):
+    def __init__(self, phrase: object) -> object:
         # normalize input phrase to turn dates and numbers to words and remove most punctuation
         self.phrase = self.datetostring(phrase)
         self.phrase = self.digit2string(self.phrase)

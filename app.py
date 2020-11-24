@@ -32,14 +32,14 @@ def index():
     return 'There was an issue saving your task'
   if 'play' in request.form:
     phrase = request.form['content']
-    try:
-        synth.save_synth(phrase)
-        print('got this far')
-        tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template('index.html', tasks=tasks, play=True, content=phrase)
-    except:
-        tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template('index.html', tasks=tasks, play=False, error=True)
+    synth.save_synth(phrase)
+    print('got this far')
+    tasks = Todo.query.order_by(Todo.date_created).all()
+    return render_template('index.html', tasks=tasks, play=True, content=phrase)
+    # except:
+    #     print(phrase)
+    #     tasks = Todo.query.order_by(Todo.date_created).all()
+    #     return render_template('index.html', tasks=tasks, play=False, error=True)
  else:
   tasks = Todo.query.order_by(Todo.date_created).all()
   return render_template('index.html', tasks=tasks, play=False)
