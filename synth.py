@@ -145,7 +145,7 @@ class Utterance:
         self.phone_seq = []
         pattern = r'\w+\'?\w+?|[?!:.,]+|\w+'
         # load the word to phones dictionary from nltk module
-        phonedictionary = nltk.corpus.reader.api.CMUDictCorpusReader.dict()
+        phonedictionary = nltk.corpus.reader.cmudict.CMUDictCorpusReader.dict()
         # iterate through each word and valid punctuation in the input phase
         for word in nltk.tokenize.regexp_tokenize(self.phrase, pattern):
             # search each word in the phones dictionary, and append its phones to overall phone sequence
