@@ -274,6 +274,19 @@ class Utterance:
                 print('I can only accept years in the form YY or YYYY. Please try again.')
                 exit()
 
+
+
+def save_synth(phrase, file='audio.wav'):
+    print(phrase)
+    utt = Utterance(phrase)
+    print('1')
+    diphone_synth = Synth()
+    print('2')
+    diphone_synth.create_synthesis(utt.diphone_seq)
+    print('3')
+    diphone_synth.out.save(file)
+    print('4')
+
 # if __name__ == "__main__":
 #     # create utterance from phrase, and synthesis from wav folder and utterance
 #     utt = Utterance(args.phrase[0])

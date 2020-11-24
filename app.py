@@ -16,17 +16,7 @@ class Todo(db.Model):
   return '<Task %r>' % self.id
 
 
-def save_synth(phrase, file='audio.wav'):
-    print(phrase)
-    print('0')
-    utt = synth.Utterance(phrase)
-    print('1')
-    diphone_synth = synth.Synth()
-    print('2')
-    diphone_synth.create_synthesis(utt.diphone_seq)
-    print('3')
-    diphone_synth.out.save(file)
-    print('4')
+
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -43,13 +33,13 @@ def index():
   if 'play' in request.form:
     phrase = request.form['content']
     try:
-        save_synth(phrase)
+        synth.save_synth(phrase)
         print('got this far')
         tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html', tasks=tasks, play=True, content=phrase)
     except:
         tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template('index.html', tasks=tasks, play=True, error=True)
+        return render_template('index.html', tasks=tasks, play=False, error=True)
  else:
   tasks = Todo.query.order_by(Todo.date_created).all()
   return render_template('index.html', tasks=tasks, play=False)
