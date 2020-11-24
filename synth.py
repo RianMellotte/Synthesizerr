@@ -3,7 +3,10 @@
 import os
 import simpleaudio
 import argparse
-from nltk.corpus import cmudict
+from nltk.util import Index
+
+from nltk.corpus.reader.util import *
+from nltk.corpus.reader.api import *
 import re
 import nltk
 import numpy as np
@@ -142,7 +145,7 @@ class Utterance:
         self.phone_seq = []
         pattern = r'\w+\'?\w+?|[?!:.,]+|\w+'
         # load the word to phones dictionary from nltk module
-        phonedictionary = cmudict.dict()
+        phonedictionary = nltk.corpus.reader.api.CMUDictCorpusReader.dict()
         # iterate through each word and valid punctuation in the input phase
         for word in nltk.tokenize.regexp_tokenize(self.phrase, pattern):
             # search each word in the phones dictionary, and append its phones to overall phone sequence
