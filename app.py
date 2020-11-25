@@ -73,7 +73,7 @@ def play(id):
   phrase = Todo.query.get_or_404(id)
   tasks = Todo.query.order_by(Todo.date_created).all()
   try:
-    save_synth(phrase.content)
+    synth.save_synth(phrase.content)
     return render_template('index.html', tasks=tasks, play=True)
   except:
       return render_template('index.html', tasks=tasks, error=True)
