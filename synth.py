@@ -7,6 +7,7 @@ import re
 import nltk
 import nltk.tokenize
 import numpy as np
+from nltk.corpus import cmudict
 
 ### NOTE: DO NOT CHANGE ANY OF THE EXISTING ARGUMENTS
 # parser = argparse.ArgumentParser(
@@ -142,7 +143,7 @@ class Utterance:
         self.phone_seq = []
         pattern = r'\w+\'?\w+?|[?!:.,]+|\w+'
         # load the word to phones dictionary from nltk module
-        phonedictionary = nltk.corpus.cmudict.dict()
+        phonedictionary = cmudict.dict()
         # iterate through each word and valid punctuation in the input phase
         for word in nltk.tokenize.regexp_tokenize(self.phrase, pattern):
             # search each word in the phones dictionary, and append its phones to overall phone sequence
