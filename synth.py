@@ -34,8 +34,11 @@ class Synth:
     def __init__(self, wav_folder="./diphones"):
         # initialize Synth by creating a dictionary of the diphone wav files in the wav_folder
         self.diphones = {}
+        print("1")
         self.out = simpleaudio.Audio()
+        print("2")
         self.get_wavs(wav_folder)
+        print("3")
 
     def get_wavs(self, wav_folder):
         #create dictionary with diphones as keys and corresponding file names in wav_folder as values
