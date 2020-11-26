@@ -27,8 +27,9 @@ class Audio(pyaudio.PyAudio):
                  chunk=CHUNK,
                  format=FORMAT):
         # Initialise the parent class
+        print("1")
         pyaudio.PyAudio.__init__(self)
-
+        print("2")
         # Set the format to that specified
         self.chan = channels
         self.rate = rate
