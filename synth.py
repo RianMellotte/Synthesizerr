@@ -279,13 +279,13 @@ class Utterance:
 
 def save_synth(phrase, file='audio.wav'):
     print(phrase)
-    utt = Utterance(phrase)
+    phrase = Utterance(phrase)
     print('1')
-    diphone_synth = Synth()
+    synthesis = Synth()
     print('2')
-    diphone_synth.create_synthesis(utt.diphone_seq)
+    synthesis.create_synthesis(phrase.diphone_seq)
     print('3')
-    diphone_synth.out.save(file)
+    synthesis.out.save(file)
     print('4')
 
 # if __name__ == "__main__":

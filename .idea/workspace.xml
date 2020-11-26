@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b5f2be4-c2bb-496a-b92f-b3f4e7147c14" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nltk.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synth.py" beforeDir="false" afterPath="$PROJECT_DIR$/synth.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +130,7 @@
       <workItem from="1605540616793" duration="2000" />
       <workItem from="1605540885594" duration="2882000" />
       <workItem from="1605606039533" duration="1953000" />
-      <workItem from="1605643436303" duration="37229000" />
+      <workItem from="1605643436303" duration="40392000" />
     </task>
     <servers />
   </component>
