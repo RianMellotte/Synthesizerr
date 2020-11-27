@@ -6,7 +6,7 @@ importlib-metadata==1.7.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 nltk==3.4.5
-numpy==1.17.3
+numpy==1.16.6
 pico==2.0.5
 PyAudio==0.2.11
 pytz==2020.4
