@@ -36,7 +36,7 @@ class Synth:
         # initialize Synth by creating a dictionary of the diphone wav files in the wav_folder
         self.diphones = {}
         print("1")
-        print(pa.get_device_count())
+        # print(pa.get_device_count())
         self.out = simpleaudio.Audio()
         print("2")
         self.get_wavs(wav_folder)
@@ -124,7 +124,7 @@ class Utterance:
         self.get_diphone_seq()
         # check to make sure there is still something left in self.phrase to synthesise
         if self.phrase == '':
-            print('Sorry, I couldn\'t synthesize any of that input. Please try again.')
+            print("Sorry, I couldn't synthesize any of that input. Please try again.")
             exit()
 
 
