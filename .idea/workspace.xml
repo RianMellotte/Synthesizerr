@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b5f2be4-c2bb-496a-b92f-b3f4e7147c14" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/audio.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synth.py" beforeDir="false" afterPath="$PROJECT_DIR$/synth.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +47,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -128,7 +131,7 @@
       <workItem from="1605540616793" duration="2000" />
       <workItem from="1605540885594" duration="2882000" />
       <workItem from="1605606039533" duration="1953000" />
-      <workItem from="1605643436303" duration="46776000" />
+      <workItem from="1605643436303" duration="55656000" />
     </task>
     <servers />
   </component>

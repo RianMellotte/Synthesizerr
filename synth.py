@@ -8,6 +8,7 @@ import nltk
 import nltk.tokenize
 import numpy as np
 from nltk.corpus import cmudict
+import _portaudio as pa
 
 ### NOTE: DO NOT CHANGE ANY OF THE EXISTING ARGUMENTS
 # parser = argparse.ArgumentParser(
@@ -35,6 +36,7 @@ class Synth:
         # initialize Synth by creating a dictionary of the diphone wav files in the wav_folder
         self.diphones = {}
         print("1")
+        print(pa.get_device_count())
         self.out = simpleaudio.Audio()
         print("2")
         self.get_wavs(wav_folder)
