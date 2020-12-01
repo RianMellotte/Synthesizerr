@@ -29,6 +29,7 @@ class Audio(pyaudio.PyAudio):
         # Initialise the parent class
         print("got this far")
         pyaudio.PyAudio.__init__(self)
+        self.get_device_count()
         print("2")
         # Set the format to that specified
         self.chan = channels
