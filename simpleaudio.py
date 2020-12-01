@@ -28,7 +28,7 @@ class Audio(pyaudio.PyAudio):
                  format=FORMAT):
         # Initialise the parent class
         print("got this far")
-        pyaudio.PyAudio.__init__(self)
+        pyaudio.PyAudio.__init__(self, self.get_device_count())
         self.get_device_count()
         print("2")
         # Set the format to that specified
