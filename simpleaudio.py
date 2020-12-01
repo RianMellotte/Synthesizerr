@@ -14,7 +14,7 @@ random.seed()
 # Some default values for the audio format
 CHUNK = 256
 FORMAT = pyaudio.paInt16
-CHANNELS = 1
+CHANNELS = 2
 RATE = 48000
 # This is needed for rescaling
 MAX_AMP = 2**15 - 1
@@ -27,26 +27,28 @@ class Audio(pyaudio.PyAudio):
                  chunk=CHUNK,
                  format=FORMAT):
         # Initialise the parent class
-        print("got this far")
-        pyaudio.PyAudio.__init__(self, self.get_device_count())
-        self.get_device_count()
-        print("2")
-        # Set the format to that specified
-        self.chan = channels
-        self.rate = rate
-        self.chunk = chunk
-        self.format = format
-        self.nptype = self.get_np_type(format)
+        try:
+            pyaudio.PyAudio.__init__(self)
+            print("2")
+            # Set the format to that specified
+            self.chan = channels
+            self.rate = rate
+            self.chunk = chunk
+            self.format = format
+            self.nptype = self.get_np_type(format)
 
-        # Set the current data to an empty array of the correct type
-        self.data = np.array([], dtype=self.nptype)
 
-        # No streams are open at the moment
-        self.istream = None
-        self.ostream = None
+            # Set the current data to an empty array of the correct type
+            self.data = np.array([], dtype=self.nptype)
 
-        # a counter for referencing the data in chunks
-        self.chunk_index = 0
+            # No streams are open at the moment
+            self.istream = None
+            self.ostream = None
+
+            # a counter for referencing the data in chunks
+            self.chunk_index = 0
+        except:
+            raise ImportError
 
     def __del__(self):
         self.terminate()
