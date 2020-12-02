@@ -47,8 +47,8 @@ class Audio(pyaudio.PyAudio):
 
             # a counter for referencing the data in chunks
             self.chunk_index = 0
-        except:
-            raise ImportError
+        except AssertionError:
+            pass
 
     def __del__(self):
         self.terminate()
