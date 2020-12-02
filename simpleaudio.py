@@ -27,28 +27,24 @@ class Audio(pyaudio.PyAudio):
                  chunk=CHUNK,
                  format=FORMAT):
         # Initialise the parent class
-        try:
-            pyaudio.PyAudio.__init__(self)
-            print("2")
-            # Set the format to that specified
-            self.chan = channels
-            self.rate = rate
-            self.chunk = chunk
-            self.format = format
-            self.nptype = self.get_np_type(format)
 
+        pyaudio.PyAudio.__init__(self)
+        print("2")
+        # Set the format to that specified
+        self.chan = channels
+        self.rate = rate
+        self.chunk = chunk
+        self.format = format
+        self.nptype = self.get_np_type(format)
 
-            # Set the current data to an empty array of the correct type
-            self.data = np.array([], dtype=self.nptype)
+        # Set the current data to an empty array of the correct type
+        self.data = np.array([], dtype=self.nptype)
+        # No streams are open at the moment
+        self.istream = None
+        self.ostream = None
+        # a counter for referencing the data in chunks
+        self.chunk_index = 0
 
-            # No streams are open at the moment
-            self.istream = None
-            self.ostream = None
-
-            # a counter for referencing the data in chunks
-            self.chunk_index = 0
-        except AssertionError:
-            pass
 
     def __del__(self):
         self.terminate()
